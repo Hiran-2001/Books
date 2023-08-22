@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./CreateBook.css"
 import { Link, useNavigate } from "react-router-dom";
 function CreateBook() {
     const navigate = useNavigate()
@@ -44,7 +45,7 @@ function CreateBook() {
       };
     return (
         <div id="form-main-div">
-      <h1 className="d-flex justify-content-center ">Register</h1>
+      <h1 className="d-flex justify-content-center ">Add New Book</h1>
       <div
         id="register-form"
         className="d-flex align-items-center justify-content-center"
@@ -75,7 +76,7 @@ function CreateBook() {
               Author
             </label>
             <input
-              type="email"
+              type="text"
               onChange={setHandler}
               value={books.author}
               name="author"
@@ -91,7 +92,7 @@ function CreateBook() {
               Publised
             </label>
             <input
-              type="number"
+              type="text"
               onChange={setHandler}
               value={books.published}
               name="published"

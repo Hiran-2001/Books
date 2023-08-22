@@ -8,13 +8,7 @@ exports.createBook=async(req,res)=>{
         console.log("plzz fill all fileds");
       }else{
         try {
-            // const anyUser = await userModel.findOne({ email: email });
-            // console.log(anyUser);
-        
-            // if (anyUser && author) {
-            //   res.status(422).send("email is already taken");
-            //   console.log("email already taken");
-            // } else {
+    
               const createBook = new bookModel({
                 book, author, published, price, status
               });
@@ -40,6 +34,18 @@ exports.getBooks=async(req,res)=>{
     
 }
 
+exports.getBooksById=async(req,res)=>{
+ 
+    try {
+      const { id } = req.params;
+      const book = await bookModel.findById({ _id: id });
+      console.log(book);
+      res.json(book).status(422);
+    } catch (err) {
+      res.status(422).send(err);
+    }
+
+}
 exports.updateBook=async(req,res)=>{
     const { book, author, published, price, status } = req.body;
     if (!book || !author || !published || !price || !status) {
