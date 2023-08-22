@@ -4,8 +4,8 @@ exports.createBook=async(req,res)=>{
 
     const { book, author, published, price, status } = req.body;
     if (!book || !author || !published || !price || !status) {
-        res.status(422).send("plz fill all fields");
-        console.log("plzz fill all fileds");
+        res.status(422).send("please fill all fields");
+        console.log("plese fill all fileds");
       }else{
         try {
     
@@ -14,7 +14,6 @@ exports.createBook=async(req,res)=>{
               });
               await createBook.save();
               res.status(201).send(createBook);
-              console.log(createBook);
             }catch(err){
                 res.status(404).json(err)
             }
@@ -25,10 +24,8 @@ exports.createBook=async(req,res)=>{
 exports.getBooks=async(req,res)=>{
     try {
         const books = await bookModel.find();
-        console.log(books);
         res.status(200).json(books);
       } catch (err) {
-        console.log(err);
         res.status(404).json(err)
       }
     
@@ -39,7 +36,6 @@ exports.getBooksById=async(req,res)=>{
     try {
       const { id } = req.params;
       const book = await bookModel.findById({ _id: id });
-      console.log(book);
       res.json(book).status(422);
     } catch (err) {
       res.status(422).send(err);

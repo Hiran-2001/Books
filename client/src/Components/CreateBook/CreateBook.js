@@ -37,8 +37,6 @@ function CreateBook() {
           console.log("error");
           alert("error");
         } else {
-          // setUdata(data)
-        //   const userid = resdata.data._id
           console.log("data added");
           navigate("/");
         }

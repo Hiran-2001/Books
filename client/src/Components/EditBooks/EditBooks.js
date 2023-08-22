@@ -46,11 +46,11 @@ const updateUser = async()=>{
     book, author, published, price, status
   })
   const resData = await responce.data
-//   console.log(resData);
+
   if(resData === 422 || !resData){
     alert("plzz fill to update")
   }else{
-    // alert("data updated")
+  
     navigate('/')
   }
 }
