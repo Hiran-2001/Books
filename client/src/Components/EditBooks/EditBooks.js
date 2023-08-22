@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {useParams, useNavigate, Link} from "react-router-dom";
 import  axios  from "axios";
+import "./EditBooks.css"
 function EditBooks() {
     const navigate = useNavigate()
 
@@ -54,10 +55,10 @@ const updateUser = async()=>{
   }
 }
   return (
-    <div>
+    <div id="form-main-div">
       <h1 className="d-flex justify-content-center ">Edit</h1>
-    <div className="d-flex align-items-center justify-content-center">
-      <form className="w-25 rounded mt-5 ">
+    <div register-form className="d-flex align-items-center justify-content-center">
+      <form id="form" className="w-25 rounded mt-5 ">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="d-flex justify-content-start">
             Name
